@@ -15,4 +15,4 @@
 4-Acesse no navegador: http://localhost:8181
 
 
-5- No íncide escolha o exercício que deseja testar.
+5- No índice escolha o exercício que deseja testar.
