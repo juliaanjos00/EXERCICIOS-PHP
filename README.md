@@ -1,6 +1,6 @@
 # EXERCICIOS-PHP
 ##  Pré-requisitos:
--PHP 8 ou superior
+-Docker 
   
 ## Como rodar:
 1-É necessário clonar o repósitorio git.
