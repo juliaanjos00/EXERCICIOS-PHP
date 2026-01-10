@@ -27,8 +27,9 @@
           <button class="button"> Calcular </button>
 
          <?php
-          if (($_POST)) {
-
+           if ($_POST['manha'] == "" || $_POST['tarde'] == "") {
+            echo "<p><strong>Não é possível calcular com os campos vazios.</strong></p>";
+            } else {
               $manha = $_POST['manha'];
               $tarde = $_POST['tarde'];
 
