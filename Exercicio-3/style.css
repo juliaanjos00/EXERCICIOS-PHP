@@ -1,0 +1,81 @@
+ body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    background: #070b1a;
+    font-family: Arial, Helvetica, sans-serif;
+ }
+
+ .box {
+    position: relative;
+    width: 320px;
+    padding: 30px;
+    margin-top: 80px;
+    border-radius: 18px;
+    background: #0c1022;
+    color: white;
+ }
+
+ .box::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 18px;
+    background: linear-gradient(90deg,#7f6ee0,#00e1ff,#0a024e);
+    background-size: 200%;
+    animation: neon 5s linear infinite;
+    z-index: -1;
+ }
+
+ @keyframes neon {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+ }
+
+ h1,h2 {
+    text-align:center;
+    color:#00e1ff;
+ }
+
+ .inputs {
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-top:20px;
+    background: transparent;
+    border: none;
+    color: white;
+ }
+
+ input,select {
+    background:transparent;
+    border:none;
+    border-bottom:1px solid #0026ff;
+    padding:8px;
+    color:rgb(51, 212, 226);
+    outline:none;
+ }
+
+ .button {
+    margin-top:25px;
+    padding:10px;
+    border-radius:25px;
+    border:none;
+    color:white;
+    cursor:pointer;
+    background: linear-gradient(90deg,#03164b,#00e1ff);
+    background-size:200%;
+    animation: btn 6s linear infinite;
+ }
+
+ @keyframes btn {
+    0%{background-position:0%;}
+    100%{background-position:200%;}
+ }
+
+ .resultado {
+    margin-top:15px;
+    text-align:center;
+    font-weight:bold;
+ }
