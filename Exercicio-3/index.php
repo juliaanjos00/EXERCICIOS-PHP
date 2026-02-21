@@ -43,6 +43,21 @@
 
          <button class="button">Verificar</button>
          <p class="resultado">  
+          <?php
+            if($_POST){
+
+                $nome = $_POST['nome'];
+                $status = $_POST['status'];
+                $quantidade= $_POST['quantidade'];
+
+                if($status == "ativo" && $quantidade < 2){
+                    echo "$nome - SEU EMPRÉSTIMO FOI AUTORIZADO";
+                }else{
+                    echo "$nome - SEU EMPRÉSTIMO FOI NEGADO";
+                }
+            }
+         ?>
+        </p>
 
     </div>
 </form>
