@@ -38,12 +38,41 @@
 
             <div class="resultado">
 
-            </div>
+                <?php
 
-            <div class="resultado">
-            
+                 $classe = "";
+                 $resultado = "";
+
+                 if($_POST){
+                    $tempo = $_POST["tempo"];
+                    $ingredientes = $_POST["ingredientes"];
+                    $etapas = $_POST["etapas"];
+
+                    if($tempo > 60 && $ingredientes > 10 && $etapas > 7){
+                        $classe = "desafiadora";
+                        $resultado = "Receita Desafiadora! <br>Essa receita exige muita dedicação, só para quem ama cozinhar de verdade!";
+                    }
+                    elseif($tempo > 60 || $ingredientes > 10 || $etapas > 7){
+                            $classe = "dificil";
+                            $resultado = "Receita Difícil! <br>Essa receita exige experiência e atenção durante o preparo.";
+                        }
+                    elseif(
+                            ($tempo >= 31 && $tempo <= 60) ||
+                            ($ingredientes >= 6 && $ingredientes <= 10) ||
+                            ($etapas >= 5 && $etapas <= 7)
+                        ){
+                            $classe = "moderada";
+                            $resultado = "Receita Moderada! <br>Essa receita tem um nível intermediário de preparo.";
+                            }
+                    else{
+                            $classe = "facil";
+                            $resultado = "Receita Fácil! <br>Essa receita é perfeita para o dia a dia, rápida e simples de preparar.";
+                        }
+                    }
+                    echo "<div class='resultado $classe'>$resultado</div>";
+                ?>
+              
             </div>
-            
         </div>
     </form>
 
