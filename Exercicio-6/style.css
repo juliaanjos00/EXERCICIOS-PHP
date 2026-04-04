@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #0a0a0a,
+        #1a1a2e,
+        #ffff,
+        #1f4068
+    );
+}
+
+/* CARD */
+.box {
+    width: 350px;
+    padding: 25px 30px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* borda animada */
+.box::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 400px;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(#00e5ff, #b0a0fb);
+    animation: borda 5s linear infinite;
+}
+
+/* animação */
+@keyframes borda {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+/* fundo interno */
+.box::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 20px;
+    background: #191919;
+}
+
+/* conteúdo na frente */
+.box * {
+    position: relative;
+    z-index: 1;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: antiquewhite;
+}
+
+/* inputs */
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.inputs label {
+    font-size: 0.9rem;
+}
+
+.inputs input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #00e5ff;
+    color: white;
+    padding: 6px;
+    font-size: 1rem;
+}
+
+.inputs input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #00e5ff;
+}
+
+/* botão */
+.button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(90deg, #00e5ff, #b0a0fb);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    filter: brightness(1.1);
+}
+
+.resultado {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    background: rgba(0,0,0,0.5);
+}
