@@ -1,4 +1,4 @@
-* {
+* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,21 +7,36 @@
 body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: system-ui, -apple-system, sans-serif;
     color: white;
-
-    background: linear-gradient(
-        135deg,
-        #0a0a0a,
-        #1a1a2e,
-        #ffff,
-        #1f4068
-    );
+    background-image: url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d");
+    background-size: cover;
+    background-position: center;
 }
 
-/* CARD */
+.titulo {
+    font-size: 45px;
+    margin-bottom: 30px;
+    color: #01051a;
+    text-align: center;
+    padding: 15px 50px;
+    border-radius: 15px;
+    font-style: italic;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(0, 229, 255, 0.5);
+    text-shadow: 
+        0 0 5px #7ae0e4,
+        0 0 10px #1aadad,
+        2px 2px 10px black;
+    box-shadow: 
+        0 0 10px rgba(0, 89, 255, 0.4),
+        0 0 20px rgba(0, 60, 255, 0.2);
+}
+
 .box {
     width: 350px;
     padding: 25px 30px;
@@ -30,7 +45,6 @@ body {
     overflow: hidden;
 }
 
-/* borda animada */
 .box::before {
     content: '';
     position: absolute;
@@ -43,7 +57,6 @@ body {
     animation: borda 5s linear infinite;
 }
 
-/* animação */
 @keyframes borda {
     0% {
         transform: translateX(-50%) rotate(0deg);
@@ -53,7 +66,6 @@ body {
     }
 }
 
-/* fundo interno */
 .box::after {
     content: '';
     position: absolute;
@@ -62,24 +74,16 @@ body {
     background: #191919;
 }
 
-/* conteúdo na frente */
 .box * {
     position: relative;
     z-index: 1;
 }
 
-h1, h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    color: antiquewhite;
-}
-
-/* inputs */
 .inputs {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .inputs label {
@@ -100,7 +104,6 @@ h1, h2 {
     box-shadow: 0 0 5px #00e5ff;
 }
 
-/* botão */
 .button {
     margin-top: 20px;
     padding: 10px;
@@ -118,6 +121,7 @@ h1, h2 {
     filter: brightness(1.1);
 }
 
+/* resultado */
 .resultado {
     margin-top: 20px;
     padding: 15px;
