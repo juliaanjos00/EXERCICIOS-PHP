@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    height: 100vh;
+    background-image: url("https://down-br.img.susercontent.com/file/9ed3713c49f5e3975c674b6cf57db10b@resize_w450_nl.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.6)
+    );
+    z-index: 0;
+}
+
+.intro {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+    z-index: 2;
+    animation: subirSumir 3s forwards;
+}
+
+.dog {
+    width: 320px;
+}
+
+.cat {
+    width: 320px;
+}
+
+@keyframes subirSumir {
+
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(-60px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-150px);
+        visibility: hidden;
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 460px;
+    max-height: 85vh;
+    padding: 40px 35px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.6),
+        inset 0 0 20px rgba(255,255,255,0.2);
+    overflow-y: auto;
+    opacity: 0;
+    animation: aparecerFormulario 2s ease forwards;
+    animation-delay: 2.5s;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 25px;
+    background: linear-gradient(
+        45deg,
+        #3498db,
+        #6dd5fa,
+        #00c6ff,
+        #3498db
+    );
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.6;
+    animation: brilhoBorda 6s linear infinite;
+}
+
+@keyframes brilhoBorda {
+
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.container::after {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #3498db, #6dd5fa);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+@keyframes aparecerFormulario {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+
+    text-align: center;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    padding: 12px;
+    border-radius: 12px;
+    background: linear-gradient(
+        90deg,
+        rgba(52,152,219,0.8),
+        rgba(109,213,250,0.8)
+    );
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+}
+
+label {
+    font-weight: 600;
+    color: white;
+}
+
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255,255,255,0.9);
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    background: white;
+    box-shadow: 0 0 10px rgba(52,152,219,0.6);
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 14px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(
+        90deg,
+        #3498db,
+        #6dd5fa,
+        #3498db
+    );
+    background-size: 200%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-position: right;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.erro {
+    background: rgba(255,0,0,0.2);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.resultado {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 15px;
+    color: #2c3e50;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
