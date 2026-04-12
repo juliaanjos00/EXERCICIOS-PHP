@@ -4,17 +4,17 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
-    background: linear-gradient(to bottom, #030347, #01091b);
+    background: linear-gradient(to bottom, #a4eaf3, #041131);
     font-family: Arial, sans-serif;
     color: white;
 }
 
 .box {
     width: 350px;
-    background-color: #ace4f5;
+    background-color: #123ece2f;
     padding: 25px 30px;
     border-radius: 20px;
-    border: 2px solid #648feb;
+    border: 2px solid #5a83dd;
     box-shadow: 0 0 15px #99b1e0;
     transition: 0.3s;
 }
